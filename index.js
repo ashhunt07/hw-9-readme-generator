@@ -9,9 +9,7 @@ function generateMarkdown(questions) {
     return `
 # ${questions.title}
 
-<a href="https://www.npmjs.org/package/check-node-version"><img src="https://img.shields.io/badge/node-v_12.18.3-blue" alt="Node Version"></a>
-<a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a>
-<a href="https://github.com/ashhunt07"><img src="https://img.shields.io/badge/contributers-1-red.svg" alt="Standard - JavaScript Style Guide"></a>
+${questions.badge}
 
 <br>
 
@@ -75,7 +73,7 @@ ${questions.install3}
 ![This is a line.](assets/hr.png)
 
 ## Licenses
-${questions.license}
+* ${questions.license}
 <br>
 
 ![This is a line.](assets/hr.png)
@@ -101,6 +99,7 @@ ${questions.test}
 
 ## How to Contribute
 ${questions.contribution}
+
 `
 
 }
@@ -116,6 +115,11 @@ async function init() {
                 type: "input",
                 name: "title",
                 message: "What is the title of the project? ",
+            },
+            {
+                type: "input",
+                name: "badge",
+                message: "Does your project have badges? ",
             },
             {
                 type: "input",
