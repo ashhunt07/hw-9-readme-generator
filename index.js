@@ -3,24 +3,108 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 const util = require("util");
 
-// Questions Required: title of your project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
 
 // layout for readme information
-function writeToFile(questions) {
+function generateMarkdown(questions) {
     return `
-    
-    # ${response.title}
-    
-    ### Table of Contents
-    
+# ${questions.title}
+
+<a href="https://www.npmjs.org/package/check-node-version"><img src="https://img.shields.io/badge/node-v_12.18.3-blue" alt="Node Version"></a>
+<a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a>
+<a href="https://github.com/ashhunt07"><img src="https://img.shields.io/badge/contributers-1-red.svg" alt="Standard - JavaScript Style Guide"></a>
+
+<br>
+
+## Table of Contents
+
+* [Credit](#credit)
+* [Preview](#preview)
+* [Requirements](#requirements)
+* [Install Instructions](#install-instructions)
+* [Install Steps](#install-steps)
+* [Licenses](#licenses)
+* [Usage Guidelines](#usage-guidelines)
+* [Code Used](#code-used)
+* [Test Instructions](#test-instructions)
+* [How to Contribute](#how-to-contribute)
+
+![This is a line.](assets/hr.png)
+
+## Credit
+${questions.author} ${questions.github}
+<br>
+
+![This is a line.](assets/hr.png)
+
+## Preview
+${questions.photo}
+<br>
+
+![This is a line.](assets/hr.png)
+
+## Requirements
+* ${questions.requirements}
+<br>
+
+![This is a line.](assets/hr.png)
+
+## Install Instructions
+${questions.install}
+
+${questions.code}
+<br>
+
+![This is a line.](assets/hr.png)
+
+## Install Steps
+
+${questions.install1}
+
+    ${questions.code1}
+
+${questions.install2}
+
+    ${questions.code2}
+
+${questions.install3}
+
+    ${questions.code3}
+
+<br>
+
+![This is a line.](assets/hr.png)
+
+## Licenses
+${questions.license}
+<br>
+
+![This is a line.](assets/hr.png)
+
+## Usage Guidelines
+${questions.usage}
+<br>
+
+![This is a line.](assets/hr.png)
+
+## Code Used
+${questions.technology}
+<br>
 
 
+![This is a line.](assets/hr.png)
 
+## Test Instructions
+${questions.test}
+<br>
 
+![This is a line.](assets/hr.png)
 
-    `
+## How to Contribute
+${questions.contribution}
+`
 
 }
+
 
 // function to initialize program
 async function init() {
@@ -28,11 +112,6 @@ async function init() {
         // array of questions for user
         const questions = await inquirer.prompt([
 
-            {
-                type: "input",
-                name: "badge",
-                message: "Insert badge code: ",
-            },
             {
                 type: "input",
                 name: "title",
@@ -50,28 +129,57 @@ async function init() {
             },
             {
                 type: "input",
-                name: "title",
-                message: "Describe your project: ",
-            },
-            {
-                type: "input",
                 name: "photo",
                 message: "Project Screenshot: ",
             },
             {
+                type: "checkbox",
+                name: "requirements",
+                message: "Choose requirements: ",
+                choices: [
+                    "Inquirer",
+                    "Util",
+                ]
+            },
+            {
                 type: "input",
-                name: "title",
-                message: "What are the installtion instructions? ",
+                name: "install",
+                message: "How do I use this app?",
             },
             {
                 type: "input",
                 name: "code",
-                message: "What is the node command? ",
+                message: "What is the code needed? ",
             },
             {
                 type: "input",
-                name: "title",
-                message: "How should this be used? ",
+                name: "install1",
+                message: "What is step 1 of install? ",
+            },
+            {
+                type: "input",
+                name: "code1",
+                message: "What is the code needed? ",
+            },
+            {
+                type: "input",
+                name: "install2",
+                message: "What is step 2 of install? ",
+            },
+            {
+                type: "input",
+                name: "code2",
+                message: "What is the code needed? ",
+            },
+            {
+                type: "input",
+                name: "install3",
+                message: "What is step 3 of install? ",
+            },
+            {
+                type: "input",
+                name: "code3",
+                message: "What is the code needed? ",
             },
             {
                 type: "checkbox",
@@ -85,15 +193,13 @@ async function init() {
             },
             {
                 type: "input",
+                name: "usage",
+                message: "How should this be used? ",
+            },
+            {
+                type: "input",
                 name: "technology",
                 message: "What Techologies were utilized? ",
-                choices: [
-                    "HTML",
-                    "CSS",
-                    "JavaScript",
-                    "JQuerry",
-                    "jSON",
-                ]
             },
             {
                 type: "input",
@@ -108,8 +214,8 @@ async function init() {
 
         ]);
 
-        const readMe = await writeToFile(questions);
-        await fs.writeFileSync("README.md", readme);
+        const readMe = await generateMarkdown(questions);
+        await fs.writeFileSync("README.md", readMe);
         console.log("You've successfully wrote to README.md");
     } catch (error) {
         console.error(error);
