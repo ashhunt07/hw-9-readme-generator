@@ -29,8 +29,9 @@ ${questions.badge}
 ![This is a line.](assets/hr.png)
 
 ## Credit
-${questions.author} ${questions.github}
-<br>
+${questions.author} 
+* ${questions.github}
+* ${questions.contact}
 
 ![This is a line.](assets/hr.png)
 
@@ -130,6 +131,11 @@ async function init() {
                 type: "input",
                 name: "github",
                 message: "Link to GitHub: ",
+            },
+            {
+                type: "input",
+                name: "contact",
+                message: "How to contact: ",
             },
             {
                 type: "input",

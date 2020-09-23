@@ -1,8 +1,8 @@
+<!-- A file that has all answers for reference to questions that are being asked and to work as a template for desired design and layout-->
+
 # README Generator
     
-<a href="https://www.npmjs.org/package/check-node-version"><img src="https://img.shields.io/badge/node-v_12.18.3-blue" alt="Node Version"></a>
- <a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a>
- <a href="https://github.com/ashhunt07"><img src="https://img.shields.io/badge/contributers-1-red.svg" alt="Standard - JavaScript Style Guide"></a>
+<a href="https://www.npmjs.org/package/check-node-version"><img src="https://img.shields.io/badge/node-v_12.18.3-blue" alt="Node Version"></a><a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a><a href="https://github.com/ashhunt07"><img src="https://img.shields.io/badge/contributers-1-red.svg" alt="Standard - JavaScript Style Guide"></a>
 
 
 <br>
@@ -26,7 +26,9 @@
 
 ## Credit
 
-Ashley [GitHub](https://github.com/ashhunt07)
+Ashley
+* [GitHub](https://github.com/ashhunt07)
+* [Contact](https://ashhunt07.github.io/portfolio/contact.html)
 
 
 <br>
