@@ -51,7 +51,7 @@ ${questions.photo}
 ## Install Instructions
 ${questions.install}
 
-${questions.code}
+    ${questions.code}
 <br>
 
 ![This is a line.](assets/hr.png)
